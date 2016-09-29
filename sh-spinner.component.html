@@ -1,0 +1,79 @@
+<div *ngIf="type === 'line'">
+  <svg class="fadeOut" [attr.width]="elemWidth" [attr.height]="width" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + width">
+    <g [attr.transform]="'translate( -' + width * 2 + ', ' + width / 2 + ')'">
+      <line
+          [attr.id]="shape + animationIndex"
+          fill="none"
+          [attr.stroke]="stroke"
+          [attr.opacity]="opacity"
+          [attr.stroke-width]="width"
+          stroke-linecap="round"
+          stroke-miterlimit="10"
+          [attr.x1]="width"
+          y1="0"
+          [attr.x2]="elemWidth"
+          y2="0">
+      </line>
+    </g>
+  </svg>
+</div>
+<div *ngIf="type === 'circle'">
+  <svg class="fadeOut" [attr.width]="elemWidth" [attr.height]="elemHeight" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + elemHeight">
+    <g [attr.transform]="'translate(' + originOffsetW + ', ' + originOffsetH +')'">
+      <circle
+          [attr.id]="shape + animationIndex"
+          fill="none"
+          [attr.stroke]="stroke"
+          [attr.opacity]="opacity"
+          [attr.stroke-width]="width"
+          [attr.stroke-linecap]="round"
+          stroke-miterlimit="10"
+          cx="0"
+          cy="0"
+          [attr.r]="radius">
+      </circle>
+    </g>
+  </svg>
+</div>
+<div *ngIf="type === 'square'">
+  <svg [attr.width]="diameter" [attr.height]="diameter" [attr.viewBox]="'0 0 ' + diameter + ' ' + diameter">
+      <g [attr.transform]="'translate(' + width / 2 + ', ' + width / 2 + ')'">
+        <rect
+            [attr.id]="shape + animationIndex"
+            fill="none"
+            [attr.stroke]="stroke"
+            [attr.opacity]="opacity"
+            [attr.stroke-width]="width"
+            stroke-linecap="round"
+            stroke-miterlimit="10"
+            x="0"
+            y="0"
+            [attr.rx]="width"
+            [attr.ry]="width"
+            [attr.height]="dims"
+            [attr.width]="dims">
+      </rect>
+    </g>
+  </svg>
+</div>
+<div *ngIf="type === 'surround'">
+  <svg [attr.width]="elemWidth" [attr.height]="elemHeight" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + elemHeight" style="position:absolute;">
+    <g [attr.transform]="'translate(' + width / 2 + ', ' + width / 2 + ')'">
+        <rect
+            [attr.id]="shape + animationIndex"
+            fill="none"
+            [attr.stroke]="stroke"
+            [attr.opacity]="opacity"
+            [attr.stroke-width]="width"
+            stroke-linecap="round"
+            stroke-miterlimit="10"
+            x="0"
+            y="0"
+            [attr.rx]="width"
+            [attr.ry]="width"
+            [attr.height]="parseInt(elemHeight - width)"
+            [attr.width]="elemWidth">
+      </rect>
+    </g>
+  </svg>
+</div>
