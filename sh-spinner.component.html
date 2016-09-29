@@ -1,16 +1,3 @@
-<ul>
-  <li>stroke : {{stroke}}</li>
-  <li>opacity : {{opacity}}</li>
-  <li>width : {{width}}</li>
-  <li>linecap : {{linecap}}</li>
-  <li>elemHeight : {{elemHeight}}</li>
-  <li>elemWidth : {{elemWidth}}</li>
-  <li>type : {{type}}</li>
-  <li>diameter : {{diameter}}</li>
-  <li>halfwayH : {{halfwayH}}</li>
-  <li>halfwayW : {{halfwayW}}</li>
-  <li>radius : {{radius}}</li>
-</ul>
 <div *ngIf="type === 'line'">
   <svg class="fadeOut" [attr.width]="elemWidth" [attr.height]="width" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + width">
     <g [attr.transform]="'translate( 0, ' + width / 2 + ')'">
