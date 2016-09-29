@@ -37,11 +37,11 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
   originOffsetH = (this.elemHeight / 2) - (this.originOffset / 2);
   dims = this.diameter - this.width;
   radius = this.originOffset - ((this.width / 2) + 2);
-  reset;
-  animationTarget;
+  reset = 10;
+  animationTarget = this.elementRef.nativeElement.lastElementChild;
   thetaDelta = parseFloat(this.speed) || 2;
 
-  ngOnInit()    { this.doAnim(); }
+  ngOnInit()    { requestAnimationFrame(this.doAnim); }
   ngOnDestroy() { /* todo */ }
 
   doAnim() {
