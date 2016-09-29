@@ -29,13 +29,14 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
   @Input() diameter: number | undefined = this.diameter || 64;
   @Input() stroke: string = this.stroke;
   @Input() width: number | undefined = this.width || 6;
+  @Input() linecap: string | undefined = this.linecap || 'round';
 
   elemWidth = this.elementRef.nativeElement.parentElement.clientWidth;
   elemHeight = this.elementRef.nativeElement.parentElement.clientHeight;
   originOffset = (this.diameter === 0) ? 32 : this.diameter / 2;
   originOffsetW = this.elemWidth / 2;
   originOffsetH = (this.elemHeight / 2) - (this.originOffset / 2);
-  dims = this.diameter - this.width;
+  dims = this.diameter - (this.width * 3);
   radius = this.originOffset - ((this.width / 2) + 2);
   reset = 10;
   thetaDelta = parseFloat(this.speed) || 2;
@@ -50,10 +51,10 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
         this.reset = this.elemWidth;
         break;
       case 'square':
-        this.reset = this.diameter * 4;
+        this.reset = (this.diameter * 4) + (this.diameter / 4);
         break;
       case 'circle':
-        this.reset = this.diameter * Math.PI;
+        this.reset = (this.diameter * Math.PI) + (this.diameter / 10);
         break;
       case 'surround': // doesn't currently work. Did once, but I broke it.
         this.reset = (this.elemWidth * 2) + (this.elemHeight * 2);
