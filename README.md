@@ -34,6 +34,8 @@ You can see the Angular 1 version working in this plunk: https://plnkr.co/edit/j
 - All manner of stuff possibly
 
 ## Use
- `<div style="display:block;width:100px;height :100px;">`
- `   <app-sh-spinner [type]="'circle'" [shape]="'starter'" [diameter]="'50'" [stroke]="'#ed1b1e'" [width]="'5'" [speed]="'0.5'"></app-sh-spinner>`
- `</div>`
+`<div style="display:block;width:100px;height :100px;">`
+
+`   <app-sh-spinner [type]="'circle'" [shape]="'starter'" [diameter]="'50'" [stroke]="'#ed1b1e'" [width]="'5'" [speed]="'0.5'"></app-sh-spinner>`
+ 
+`</div>`
