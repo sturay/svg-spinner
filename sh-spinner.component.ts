@@ -31,7 +31,7 @@ export class ccSpinner implements ElementRef {
   })(); 
 
   // attributes from html
-  @Input() shape: string = this.shape;
+  @Input() id: string = this.shape;
   @Input() type: string | undefined = this.type || 'circle';
   @Input() opacity: number | undefined = this.opacity || 1;
   @Input() speed: string | undefined = this.speed || '1';
