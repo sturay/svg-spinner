@@ -39,7 +39,7 @@ export class ccSpinner implements ElementRef {
   @Input() stroke: string = this.stroke;
   @Input() width: number | undefined = this.width || 6;
 
-  elemWidth = this.elementRef.nativeElement.clientWidth;
+  elemWidth = this.elementRef.nativeElement.parentElement.clientWidth;
   elemHeight = this.elementRef.nativeElement.parentElement.clientHeight;
   originOffset = (this.diameter === 0) ? 32 : this.diameter / 2;
   originOffsetW = this.elemWidth / 2;
