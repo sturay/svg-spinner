@@ -7,7 +7,7 @@
           [attr.stroke]="stroke"
           [attr.opacity]="opacity"
           [attr.stroke-width]="width"
-          stroke-linecap="round"
+          [attr.stroke-linecap]="linecap"
           stroke-miterlimit="10"
           [attr.x1]="width"
           y1="0"
@@ -26,7 +26,7 @@
           [attr.stroke]="stroke"
           [attr.opacity]="opacity"
           [attr.stroke-width]="width"
-          [attr.stroke-linecap]="round"
+          [attr.stroke-linecap]="linecap"
           stroke-miterlimit="10"
           cx="0"
           cy="0"
@@ -44,14 +44,14 @@
             [attr.stroke]="stroke"
             [attr.opacity]="opacity"
             [attr.stroke-width]="width"
-            stroke-linecap="round"
+            [attr.stroke-linecap]="linecap"
             stroke-miterlimit="10"
             x="0"
             y="0"
             [attr.rx]="width"
             [attr.ry]="width"
-            [attr.height]="dims"
-            [attr.width]="dims">
+            [attr.height]="dims - width"
+            [attr.width]="dims - width">
       </rect>
     </g>
   </svg>
@@ -65,7 +65,7 @@
             [attr.stroke]="stroke"
             [attr.opacity]="opacity"
             [attr.stroke-width]="width"
-            stroke-linecap="round"
+            [attr.stroke-linecap]="linecap"
             stroke-miterlimit="10"
             x="0"
             y="0"
