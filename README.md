@@ -1,4 +1,4 @@
-# svg-spinner
+# svg-spinner _NOT QUITE READY_
 SVG based spinner for Angular2 - Typescript
 
 # Angular JS: growing-line-spinner
