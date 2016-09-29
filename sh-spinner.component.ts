@@ -38,13 +38,13 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
   dims = this.diameter - this.width;
   radius = this.originOffset - ((this.width / 2) + 2);
   reset = 10;
-  animationTarget = this.elementRef.nativeElement.lastElementChild;
   thetaDelta = parseFloat(this.speed) || 2;
 
-  ngOnInit()    { requestAnimationFrame(this.doAnim); }
+  ngOnInit()    { requestAnimationFrame(this.doAnim.bind(this)); }
   ngOnDestroy() { /* todo */ }
 
   doAnim() {
+    let animationTarget = this.elementRef.nativeElement.lastElementChild;
     switch (this.type) {
       case 'line':
         this.reset = this.elemWidth;
@@ -60,14 +60,14 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
         break;
     }
     if (this.type === 'circle') {
-      this.animationTarget.setAttribute('transform', 'rotate(' + this.animationTarget.currentTheta + ')');
+      animationTarget.setAttribute('transform', 'rotate(' + animationTarget.currentTheta + ')');
     }
-    this.animationTarget.setAttribute('stroke-dasharray', this.animationTarget.currentTheta);
-    this.animationTarget.currentTheta += this.thetaDelta;
-    if (this.animationTarget.currentTheta >= this.reset) {
-      this.animationTarget.currentTheta = 0;
+    animationTarget.setAttribute('stroke-dasharray', animationTarget.currentTheta);
+    animationTarget.currentTheta += this.thetaDelta;
+    if (animationTarget.currentTheta >= this.reset) {
+      animationTarget.currentTheta = 0;
     }
-    requestAnimationFrame(this.doAnim);
+    requestAnimationFrame(this.doAnim.bind(this));
   }
 
   constructor(private elementRef: ElementRef) { }
