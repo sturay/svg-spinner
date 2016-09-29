@@ -25,6 +25,8 @@ ___
 
 TBD
 
+If using the Angular cli, create a new component and simply copy the content of these files into the respective generated files.
+
 You can see the Angular 1 version working in this plunk: https://plnkr.co/edit/jnSbb1
 
 ## Todo
