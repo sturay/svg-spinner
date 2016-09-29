@@ -1,6 +1,19 @@
+<ul>
+  <li>stroke : {{stroke}}</li>
+  <li>opacity : {{opacity}}</li>
+  <li>width : {{width}}</li>
+  <li>linecap : {{linecap}}</li>
+  <li>elemHeight : {{elemHeight}}</li>
+  <li>elemWidth : {{elemWidth}}</li>
+  <li>type : {{type}}</li>
+  <li>diameter : {{diameter}}</li>
+  <li>halfwayH : {{halfwayH}}</li>
+  <li>halfwayW : {{halfwayW}}</li>
+  <li>radius : {{radius}}</li>
+</ul>
 <div *ngIf="type === 'line'">
   <svg class="fadeOut" [attr.width]="elemWidth" [attr.height]="width" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + width">
-    <g [attr.transform]="'translate( -' + width * 2 + ', ' + width / 2 + ')'">
+    <g [attr.transform]="'translate( 0, ' + width / 2 + ')'">
       <line
           [attr.id]="shape + animationIndex"
           fill="none"
@@ -11,7 +24,7 @@
           stroke-miterlimit="10"
           [attr.x1]="width"
           y1="0"
-          [attr.x2]="elemWidth"
+          [attr.x2]="elemWidth - width"
           y2="0">
       </line>
     </g>
@@ -19,7 +32,7 @@
 </div>
 <div *ngIf="type === 'circle'">
   <svg class="fadeOut" [attr.width]="elemWidth" [attr.height]="elemHeight" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + elemHeight">
-    <g [attr.transform]="'translate(' + originOffsetW + ', ' + originOffsetH +')'">
+    <g [attr.transform]="'translate(' + halfwayWCenter + ', ' + halfwayHCenter +')'">
       <circle
           [attr.id]="shape + animationIndex"
           fill="none"
@@ -36,8 +49,8 @@
   </svg>
 </div>
 <div *ngIf="type === 'square'">
-  <svg [attr.width]="diameter" [attr.height]="diameter" [attr.viewBox]="'0 0 ' + diameter + ' ' + diameter">
-      <g [attr.transform]="'translate(' + width / 2 + ', ' + width / 2 + ')'">
+  <svg [attr.width]="elemWidth" [attr.height]="elemHeight" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + elemHeight">
+      <g [attr.transform]="'translate(' + halfwayW + ', ' + halfwayH + ')'">
         <rect
             [attr.id]="shape + animationIndex"
             fill="none"
