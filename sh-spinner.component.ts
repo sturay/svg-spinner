@@ -9,8 +9,8 @@ import { Component, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'cc-spinner',
-  styleUrls: [ '/app/cc-spinner.component.css' ],
-  templateUrl: './app/cc-spinner.component.html'
+  styleUrls: [ 'sh-spinner.component.css' ],
+  templateUrl: 'sh-spinner.component.html'
 })
 
 export class ccSpinner implements ElementRef {
