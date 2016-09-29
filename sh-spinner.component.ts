@@ -44,7 +44,7 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
   ngOnDestroy() { /* todo */ }
 
   doAnim() {
-    let animationTarget = this.elementRef.nativeElement.lastElementChild;
+    let animationTarget = this.elementRef.nativeElement.lastElementChild.children[0].children[0].children[0];
     switch (this.type) {
       case 'line':
         this.reset = this.elemWidth;
@@ -58,6 +58,9 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
       case 'surround': // doesn't currently work. Did once, but I broke it.
         this.reset = (this.elemWidth * 2) + (this.elemHeight * 2);
         break;
+    }
+    if (animationTarget.currentTheta == null) {
+      animationTarget.currentTheta = 0;
     }
     if (this.type === 'circle') {
       animationTarget.setAttribute('transform', 'rotate(' + animationTarget.currentTheta + ')');
