@@ -38,6 +38,10 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
   originOffsetH = (this.elemHeight / 2) - (this.originOffset / 2);
   dims = this.diameter - (this.width * 3);
   radius = this.originOffset - ((this.width / 2) + 2);
+  halfwayWCenter = this.elemWidth / 2;
+  halfwayHCenter = this.elemHeight / 2;
+  halfwayW = this.halfwayWCenter - (this.originOffset / 2) - (this.width / 2);
+  halfwayH = this.halfwayHCenter - (this.originOffset / 2) - (this.width / 2);
   reset = 10;
   thetaDelta = parseFloat(this.speed) || 2;
 
