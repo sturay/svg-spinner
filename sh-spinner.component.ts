@@ -5,7 +5,7 @@
 * initial commit 29 September 2016
 */
 
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 
 @Component({
   selector: 'cc-spinner',
@@ -31,13 +31,13 @@ export class ccSpinner implements ElementRef {
   })(); 
 
   // attributes from html
-  shape: string = this.shape;
-  type: string | undefined = this.type || 'circle';
-  opacity: number | undefined = this.opacity || 1;
-  speed: string | undefined = this.speed || '1';
-  diameter: number | undefined = this.diameter || 64;
-  stroke: string = this.stroke;
-  width: number | undefined = this.width || 6;
+  @Input() shape: string = this.shape;
+  @Input() type: string | undefined = this.type || 'circle';
+  @Input() opacity: number | undefined = this.opacity || 1;
+  @Input() speed: string | undefined = this.speed || '1';
+  @Input() diameter: number | undefined = this.diameter || 64;
+  @Input() stroke: string = this.stroke;
+  @Input() width: number | undefined = this.width || 6;
 
   elemWidth = this.elementRef.nativeElement.clientWidth;
   elemHeight = this.elementRef.nativeElement.parentElement.clientHeight;
