@@ -37,7 +37,7 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
   originOffsetW = this.elemWidth / 2;
   originOffsetH = (this.elemHeight / 2) - (this.originOffset / 2);
   dims = this.diameter - (this.width * 3);
-  radius = this.originOffset - ((this.width / 2) + 2);
+  radius = this.diameter - ((this.width / 2) + 2);
   halfwayWCenter = this.elemWidth / 2;
   halfwayHCenter = this.elemHeight / 2;
   halfwayW = this.halfwayWCenter - (this.originOffset / 2) - (this.width / 2);
