@@ -9,8 +9,8 @@ ___
 ## options
  For the circular option, there is the choice of diameter, stroke thickness, stroke colour and opacity.
  The speed, although behaving exactly as expected, is currently user defined and can appear odd, but that is on my list of things to remedy.
- - [id] - Sanity item so you know what's what
- - [type] - *Must* be set to either 'circle', 'square' or 'line' and cannot be missing
+ - [shape] - Sanity item so you know what's what - writes it as an id with an index
+ - [type] - Set to either 'circle', 'square' or 'line' ('surround' is work in progress). If not used, defaults to 'circle'
  - [strokeWidth] - The stroke width of the spinner. Defaults to 6
  - [size] - The diameter of the spinner which if omitted defaults to 24
  - [stroke] - this is the colour of the spinner. Stroke is used as it is an svg element. Default is rgb(0,0,0)
