@@ -22,17 +22,25 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
   })();
 
   // attributes from html
+  @Input() alpha: string | undefined = this.alpha || '.5';
   @Input() diameter: number | undefined = this.diameter;
   @Input() linecap: string | undefined = this.linecap || 'round';
   @Input() opacity: number | undefined = this.opacity || 1;
+  @Input() overlay: string | undefined = this.overlay || 'ffffff';
   @Input() speed: string | undefined = this.speed || '1';
-  @Input() stroke: string = this.stroke;
+  @Input() stroke: string = '#' + this.stroke;
   @Input() type: string | undefined = this.type || 'circle';
   @Input() shape: string = this.shape;
   @Input() width: number | undefined = this.width || 6;
 
   thetaDelta; elemWidth; elemHeight; originOffset; originOffsetW; originOffsetH;
   dims; radius; halfwayWCenter; halfwayHCenter; halfwayW; halfwayH; reset;
+
+  hexToRGBA(hex, alpha) {
+    let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? 'rgba(' + parseInt(result[1], 16) + ',' + parseInt(result[2], 16) +
+      ',' + parseInt(result[3], 16) + ',' + this.opacity + ')' : 'rgba(255,255,255,.5)';
+  }
 
   ngOnInit() {
     this.elemWidth = this.elementRef.nativeElement.parentElement.clientWidth;
@@ -44,8 +52,9 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
     this.radius = this.diameter / 2;
     this.halfwayWCenter = this.elemWidth / 2;
     this.halfwayHCenter = this.elemHeight / 2;
-    this.halfwayW = this.halfwayWCenter - (this.originOffset / 2) - (this.width / 2);
-    this.halfwayH = this.halfwayHCenter - (this.originOffset / 2) - (this.width / 2);
+    this.halfwayW = this.halfwayWCenter - this.radius - this.width;
+    this.halfwayH = this.halfwayHCenter - this.radius - this.width;
+    this.overlay = this.hexToRGBA(this.overlay, this.alpha);
     this.thetaDelta = parseFloat(this.speed);
     console.log(this);
     requestAnimationFrame(this.doAnim.bind(this));
@@ -59,7 +68,7 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
         this.reset = this.elemWidth;
         break;
       case 'square':
-        this.reset = this.diameter * 1.5;
+        this.reset = this.diameter * 4;
         break;
       case 'circle':
         this.reset = this.diameter * Math.PI;
