@@ -1,4 +1,4 @@
-<div class="sh-spinner" *ngIf="type === 'line'">
+<div class="sh-spinner sh-spinner-line" *ngIf="type === 'line'">
   <svg class="sh-spinner-line fadeOut" [attr.width]="elemWidth" [attr.height]="width" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + width">
     <g [attr.transform]="'translate( 0, ' + width / 2 + ')'">
       <line
@@ -17,7 +17,7 @@
     </g>
   </svg>
 </div>
-<div class="sh-spinner" *ngIf="type === 'circle'">
+<div class="sh-spinner sh-spinner-circle" *ngIf="type === 'circle'">
   <svg class="sh-spinner-circle fadeOut" [attr.width]="elemWidth" [attr.height]="elemHeight" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + elemHeight">
     <g [attr.transform]="'translate(' + halfwayWCenter + ', ' + halfwayHCenter +')'">
       <circle
@@ -35,7 +35,7 @@
     </g>
   </svg>
 </div>
-<div class="sh-spinner" *ngIf="type === 'square'">
+<div class="sh-spinner sh-spinner-square" *ngIf="type === 'square'">
   <svg class="sh-spinner-square fadeOut" [attr.width]="elemWidth" [attr.height]="elemHeight" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + elemHeight">
       <g [attr.transform]="'translate(' + halfwayW + ', ' + halfwayH + ')'">
         <rect
@@ -56,12 +56,12 @@
     </g>
   </svg>
 </div>
-<div class="sh-spinner" *ngIf="type === 'surround'">
+<div class="sh-spinner sh-spinner-surround" *ngIf="type === 'surround'">
   <svg class="sh-spinner-surround fadeOut" [attr.width]="elemWidth" [attr.height]="elemHeight" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + elemHeight" style="position:absolute;">
     <g [attr.transform]="'translate(' + width / 2 + ', ' + width / 2 + ')'">
         <rect
             [attr.id]="shape + animationIndex"
-            fill="none"
+            [attr.fill]="overlay"
             [attr.stroke]="stroke"
             [attr.opacity]="opacity"
             [attr.stroke-width]="width"
