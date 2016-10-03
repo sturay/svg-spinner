@@ -1,9 +1,11 @@
 # svg-spinner 
 SVG based spinner for Angular2 - Typescript
 
-# Angular JS: growing-line-spinner
-A simple svg spinner directive for angular 1.x with circular and linear versions and lots of options.
-I was basically flummoxed by the lack of really configurable spinners, or spinners that were based on gif images or css reliant to make icon font elements rotate. So, I created this spinner that uses svg and some vanilla.js wrapped in a tidy angular module. It's small and as long as you get the css behavoirs of the position attribute, you should be good to go.
+Based on a simple svg spinner directive for angular 1.x with circular and linear versions and lots of options.
+
+I was basically flummoxed by the lack of really configurable spinners, or spinners that were based on gif images or css reliant to make icon font elements rotate (accessibility issues with iconfonts were also considered). So, I created this spinner that uses svg. It's small and as long as you understand the css behavoirs of the position attribute, you should be good to go.
+
+The spinners all need to be within a relatively positioned element.
 ___
 
 ## options
