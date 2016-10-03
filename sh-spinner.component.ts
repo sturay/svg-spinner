@@ -22,32 +22,32 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
   })();
 
   // attributes from html
-  @Input() type: string | undefined = this.type || 'circle';
-  @Input() shape: string = this.shape;
+  @Input() diameter: number | undefined = this.diameter;
+  @Input() linecap: string | undefined = this.linecap || 'round';
   @Input() opacity: number | undefined = this.opacity || 1;
   @Input() speed: string | undefined = this.speed || '1';
-  @Input() diameter: number | undefined = this.diameter || 64;
   @Input() stroke: string = this.stroke;
+  @Input() type: string | undefined = this.type || 'circle';
+  @Input() shape: string = this.shape;
   @Input() width: number | undefined = this.width || 6;
-  @Input() linecap: string | undefined = this.linecap || 'round';
 
-  elemWidth = this.elementRef.nativeElement.parentElement.clientWidth;
-  elemHeight = this.elementRef.nativeElement.parentElement.clientHeight;
-  originOffset = (this.diameter === 0) ? 32 : this.diameter / 2;
-  originOffsetW = this.elemWidth / 2;
-  originOffsetH = (this.elemHeight / 2) - (this.originOffset / 2);
-  dims = this.diameter - (this.width * 3);
-  radius = this.diameter - ((this.width / 2) + 2);
-  halfwayWCenter = this.elemWidth / 2;
-  halfwayHCenter = this.elemHeight / 2;
-  halfwayW = this.halfwayWCenter - (this.originOffset / 2) - (this.width / 2);
-  halfwayH = this.halfwayHCenter - (this.originOffset / 2) - (this.width / 2);
-  reset = 10;
-  thetaDelta;
+  thetaDelta; elemWidth; elemHeight; originOffset; originOffsetW; originOffsetH;
+  dims; radius; halfwayWCenter; halfwayHCenter; halfwayW; halfwayH; reset;
 
   ngOnInit() {
+    this.elemWidth = this.elementRef.nativeElement.parentElement.clientWidth;
+    this.elemHeight = this.elementRef.nativeElement.parentElement.clientHeight;
+    this.originOffset = (this.diameter === 0) ? 32 : this.diameter / 2;
+    this.originOffsetW = this.elemWidth / 2;
+    this.originOffsetH = (this.elemHeight / 2) - (this.originOffset / 2);
+    this.dims = this.diameter - this.width * Math.PI;
+    this.radius = this.diameter / 2;
+    this.halfwayWCenter = this.elemWidth / 2;
+    this.halfwayHCenter = this.elemHeight / 2;
+    this.halfwayW = this.halfwayWCenter - (this.originOffset / 2) - (this.width / 2);
+    this.halfwayH = this.halfwayHCenter - (this.originOffset / 2) - (this.width / 2);
     this.thetaDelta = parseFloat(this.speed);
-    console.log(this.thetaDelta + ' : ' + this.speed);
+    console.log(this);
     requestAnimationFrame(this.doAnim.bind(this));
   }
   ngOnDestroy() { /* todo */ }
@@ -59,10 +59,10 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
         this.reset = this.elemWidth;
         break;
       case 'square':
-        this.reset = (this.diameter * 1.5);
+        this.reset = this.diameter * 1.5;
         break;
       case 'circle':
-        this.reset = (this.diameter * Math.PI) + (this.diameter / 10);
+        this.reset = this.diameter * Math.PI;
         break;
       case 'surround': // doesn't currently work. Did once, but I broke it.
         this.reset = (this.elemWidth * 2) + (this.elemHeight * 2);
