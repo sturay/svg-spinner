@@ -1,5 +1,5 @@
-<div *ngIf="type === 'line'">
-  <svg class="fadeOut" [attr.width]="elemWidth" [attr.height]="width" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + width">
+<div class="sh-spinner" *ngIf="type === 'line'">
+  <svg class="sh-spinner-line fadeOut" [attr.width]="elemWidth" [attr.height]="width" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + width">
     <g [attr.transform]="'translate( 0, ' + width / 2 + ')'">
       <line
           [attr.id]="shape + animationIndex"
@@ -17,8 +17,8 @@
     </g>
   </svg>
 </div>
-<div *ngIf="type === 'circle'">
-  <svg class="fadeOut" [attr.width]="elemWidth" [attr.height]="elemHeight" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + elemHeight">
+<div class="sh-spinner" *ngIf="type === 'circle'">
+  <svg class="sh-spinner-circle fadeOut" [attr.width]="elemWidth" [attr.height]="elemHeight" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + elemHeight">
     <g [attr.transform]="'translate(' + halfwayWCenter + ', ' + halfwayHCenter +')'">
       <circle
           [attr.id]="shape + animationIndex"
@@ -35,8 +35,8 @@
     </g>
   </svg>
 </div>
-<div *ngIf="type === 'square'">
-  <svg [attr.width]="elemWidth" [attr.height]="elemHeight" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + elemHeight">
+<div class="sh-spinner" *ngIf="type === 'square'">
+  <svg class="sh-spinner-square fadeOut" [attr.width]="elemWidth" [attr.height]="elemHeight" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + elemHeight">
       <g [attr.transform]="'translate(' + halfwayW + ', ' + halfwayH + ')'">
         <rect
             [attr.id]="shape + animationIndex"
@@ -56,8 +56,8 @@
     </g>
   </svg>
 </div>
-<div *ngIf="type === 'surround'">
-  <svg [attr.width]="elemWidth" [attr.height]="elemHeight" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + elemHeight" style="position:absolute;">
+<div class="sh-spinner" *ngIf="type === 'surround'">
+  <svg class="sh-spinner-surround fadeOut" [attr.width]="elemWidth" [attr.height]="elemHeight" [attr.viewBox]="'0 0 ' + elemWidth + ' ' + elemHeight" style="position:absolute;">
     <g [attr.transform]="'translate(' + width / 2 + ', ' + width / 2 + ')'">
         <rect
             [attr.id]="shape + animationIndex"
@@ -71,8 +71,8 @@
             y="0"
             [attr.rx]="width"
             [attr.ry]="width"
-            [attr.height]="parseInt(elemHeight - width)"
-            [attr.width]="elemWidth">
+            [attr.height]="elemHeight - width"
+            [attr.width]="elemWidth - width">
       </rect>
     </g>
   </svg>
