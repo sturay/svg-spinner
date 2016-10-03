@@ -43,9 +43,13 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
   halfwayW = this.halfwayWCenter - (this.originOffset / 2) - (this.width / 2);
   halfwayH = this.halfwayHCenter - (this.originOffset / 2) - (this.width / 2);
   reset = 10;
-  thetaDelta = parseFloat(this.speed) || 2;
+  thetaDelta;
 
-  ngOnInit()    { requestAnimationFrame(this.doAnim.bind(this)); }
+  ngOnInit() {
+    this.thetaDelta = parseFloat(this.speed);
+    console.log(this.thetaDelta + ' : ' + this.speed);
+    requestAnimationFrame(this.doAnim.bind(this));
+  }
   ngOnDestroy() { /* todo */ }
 
   doAnim() {
@@ -55,7 +59,7 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
         this.reset = this.elemWidth;
         break;
       case 'square':
-        this.reset = (this.diameter * 4) + (this.diameter / 4);
+        this.reset = (this.diameter * 1.5);
         break;
       case 'circle':
         this.reset = (this.diameter * Math.PI) + (this.diameter / 10);
