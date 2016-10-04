@@ -34,8 +34,10 @@ If using the Angular cli, create a new component and simply copy the content of 
 You can see the Angular 1 version working in this plunk: https://plnkr.co/edit/jnSbb1
 
 ## Todo
-- Fix the endcap option
-- All manner of stuff possibly
+- Add option to control dash count
+- Sample site that demonstrates use cases and types
+- Expand the readme to be more explanatory
+- npm? bower?
 
 ## Use
 Simple circle:
