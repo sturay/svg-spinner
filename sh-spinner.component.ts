@@ -3,7 +3,7 @@ import { Component, ElementRef, Input, OnDestroy, OnInit  } from '@angular/core'
 @Component({
   selector: 'app-sh-spinner',
   templateUrl: './sh-spinner.component.html',
-  styleUrls: ['./sh-spinner.component.css']
+  styleUrls: ['./sh-spinner.component.styl']
 })
 
 export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
@@ -39,7 +39,7 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
   hexToRGBA(hex, alpha) {
     let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result ? 'rgba(' + parseInt(result[1], 16) + ',' + parseInt(result[2], 16) +
-      ',' + parseInt(result[3], 16) + ',' + this.opacity + ')' : 'rgba(255,255,255,.5)';
+      ',' + parseInt(result[3], 16) + ',' + alpha + ')' : 'rgba(255,255,255,.3)';
   }
 
   ngOnInit() {
@@ -54,7 +54,7 @@ export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
     this.halfwayHCenter = this.elemHeight / 2;
     this.halfwayW = this.halfwayWCenter - this.radius - this.width;
     this.halfwayH = this.halfwayHCenter - this.radius - this.width;
-    this.overlay = this.hexToRGBA(this.overlay, this.alpha);
+    this.overlay = this.hexToRGBA(this.overlay, parseFloat(this.alpha));
     this.thetaDelta = parseFloat(this.speed);
     console.log(this);
     requestAnimationFrame(this.doAnim.bind(this));
