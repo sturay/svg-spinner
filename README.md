@@ -1,6 +1,8 @@
 # svg-spinner 
 SVG based spinner for Angular2 - Typescript
 
+All requests to assist in the betterment of this spinner would be well received.
+
 Based on a simple svg spinner directive for angular 1.x with circular and linear versions and lots of options.
 
 I was basically flummoxed by the lack of really configurable spinners, or spinners that were based on gif images or css reliant to make icon font elements rotate (accessibility issues with iconfonts were also considered). So, I created this spinner that uses svg. It's small and as long as you understand the css behavoirs of the position attribute, you should be good to go.
@@ -28,6 +30,8 @@ ___
 ## installation
 
 TBD
+
+The _dist_ folder contains a small ng2 app that runs on any web server and demonstrates the spinner in all types.
 
 If using the Angular cli, create a new component and simply copy the content of these files into the respective generated files.
 
