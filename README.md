@@ -8,6 +8,8 @@ Based on a simple svg spinner directive for angular 1.x with circular and linear
 I was basically flummoxed by the lack of really configurable spinners, or spinners that were based on gif images or css reliant to make icon font elements rotate (accessibility issues with iconfonts were also considered). So, I created this spinner that uses svg. It's small and as long as you understand the css behavoirs of the position attribute, you should be good to go.
 
 The spinners all need to be within a relatively positioned element.
+
+Documentation and examples can be found at: http://stuartharding.co.uk/stuart/spinner/readme
 ___
 
 ## options
