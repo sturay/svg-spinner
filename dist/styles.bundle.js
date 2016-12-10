@@ -1,15 +1,15 @@
 webpackJsonp([1,2],{
 
-/***/ 365:
+/***/ 364:
 /***/ function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(630);
+var content = __webpack_require__(629);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(669)(content, {});
+var update = __webpack_require__(666)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -27,22 +27,22 @@ if(false) {
 
 /***/ },
 
-/***/ 630:
+/***/ 629:
 /***/ function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(631)();
+exports = module.exports = __webpack_require__(630)();
 // imports
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\nbody {\n  font-family: 'Fira Sans', Helvetica, Sans-serif;\n  margin: 0;\n  padding: 0;\n}\nbody * {\n  box-sizing: border-box;\n}\nbody article {\n  margin: 0 auto;\n  max-width: 900px;\n  overflow: hidden;\n  position: relative;\n  width: calc(100vw - 100px);\n}\nbody article pre {\n  overflow-x: auto;\n}\nbody article h2.title {\n  font-size: 22pt;\n  font-weight: 400;\n  color: rgba(0,0,0,0.8);\n  margin: 2em 0;\n}\nbody article .spinner-content {\n  position: relative;\n}\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\nbody {\n  font-family: 'Fira Sans', Helvetica, Sans-serif;\n  margin: 0;\n  padding: 0;\n}\nbody * {\n  box-sizing: border-box;\n}\nbody article {\n  margin: 0 auto;\n  max-width: 900px;\n  overflow: hidden;\n  position: relative;\n  width: calc(100vw - 100px);\n}\nbody article pre {\n  overflow-x: auto;\n}\nbody article h2.title {\n  font-size: 22pt;\n  font-weight: 400;\n  color: rgba(0,0,0,0.8);\n  margin: 2em 0;\n}\nbody article .spinner-content {\n  position: relative;\n}\nbody article p {\n  font-size: 12pt;\n}\nbody article p.important {\n  background: rgba(255,255,0,0.3);\n  display: block;\n  color: rgba(0,0,0,0.8);\n  padding: 6pt;\n  border: solid 2px rgba(0,0,0,0.2);\n  border-radius: 4pt;\n}\nbody article p.important svg {\n  position: relative;\n  display: inline-block;\n  top: 3px;\n  margin-right: 6px;\n}\nbody article p code {\n  color: rgba(120,44,120,0.8);\n  font-size: 12pt;\n}\n", ""]);
 
 // exports
 
 
 /***/ },
 
-/***/ 631:
+/***/ 630:
 /***/ function(module, exports) {
 
 /*
@@ -99,7 +99,7 @@ module.exports = function() {
 
 /***/ },
 
-/***/ 669:
+/***/ 666:
 /***/ function(module, exports) {
 
 /*
@@ -352,13 +352,13 @@ function updateLink(linkElement, obj) {
 
 /***/ },
 
-/***/ 672:
+/***/ 669:
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(365);
+module.exports = __webpack_require__(364);
 
 
 /***/ }
 
-},[672]);
+},[669]);
 //# sourceMappingURL=styles.map
