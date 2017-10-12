@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('svg-multi-spinner App', () => {
+describe('svg-spinner App', () => {
   let page: AppPage;
 
   beforeEach(() => {
