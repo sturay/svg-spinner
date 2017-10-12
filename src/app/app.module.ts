@@ -1,34 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { SpinnerTypesRoutingModule } from './app-routing.module';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CircleComponent } from './types/circle/circle.component';
+import { LineComponent } from './types/line/line.component';
 import { ReadmeComponent } from './readme/readme.component';
-import { CircleComponent } from './circle/circle.component';
-import { LineComponent } from './line/line.component';
-import { SquareComponent } from './square/square.component';
-import { SurroundComponent } from './surround/surround.component';
-import { ShSpinnerComponent } from './shared/sh-spinner/sh-spinner.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { NavigationComponent } from './shared/navigation/navigation.component';
+import { SquareComponent } from './types/square/square.component';
+import { SurroundComponent } from './types/surround/surround.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReadmeComponent,
     CircleComponent,
     LineComponent,
+    ReadmeComponent,
+    SpinnerComponent,
+    NavigationComponent,
     SquareComponent,
-    SurroundComponent,
-    ShSpinnerComponent,
-    NavigationComponent
+    SurroundComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
-    SpinnerTypesRoutingModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

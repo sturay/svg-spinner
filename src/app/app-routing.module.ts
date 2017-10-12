@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ReadmeComponent } from './readme/readme.component';
-import { CircleComponent } from './circle/circle.component';
-import { SquareComponent } from './square/square.component';
-import { LineComponent } from './line/line.component';
-import { SurroundComponent } from './surround/surround.component';
+import { CircleComponent } from './types/circle/circle.component';
+import { SquareComponent } from './types/square/square.component';
+import { LineComponent } from './types/line/line.component';
+import { SurroundComponent } from './types/surround/surround.component';
 
 const routes: Routes = [
   {
@@ -17,26 +17,26 @@ const routes: Routes = [
     component: ReadmeComponent
   },
   {
-    path: 'circle',
+    path: 'types/circle',
     component: CircleComponent
   },
   {
-    path: 'square',
+    path: 'types/square',
     component: SquareComponent
   },
   {
-    path: 'line',
+    path: 'types/line',
     component: LineComponent
   },
   {
-    path: 'surround',
+    path: 'types/surround',
     component: SurroundComponent
   }
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  providers: []
+  exports: [RouterModule]
 })
-export class SpinnerTypesRoutingModule { }
+export class AppRoutingModule { }

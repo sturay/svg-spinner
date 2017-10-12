@@ -1,12 +1,12 @@
 import { Component, ElementRef, Input, OnDestroy, OnInit  } from '@angular/core';
 
 @Component({
-  selector: 'app-sh-spinner',
-  templateUrl: './sh-spinner.component.html',
-  styleUrls: ['./sh-spinner.component.styl']
+  selector: 'spinner',
+  templateUrl: './spinner.component.html',
+  styleUrls: ['./spinner.component.styl']
 })
 
-export class ShSpinnerComponent implements ElementRef, OnDestroy, OnInit  {
+export class SpinnerComponent implements ElementRef, OnDestroy, OnInit  {
   nativeElement = {};
   animationIndex = 0;
 
