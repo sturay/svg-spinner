@@ -1,0 +1,28 @@
+<article>
+  <h2 class="title">[type]="'square'"</h2>
+  <div class="spinner-content">
+    <p>
+      &lt;app-sh-spinner [type]="'square'" [shape]="'starter'" [diameter]="'72'" [stroke]="'#bada55'" [width]="'5'" [speed]="'1.2'"&gt;&lt;/app-sh-spinner&gt;
+    </p>
+    <div style="display:block;width:100%;height :6em;">
+      <app-sh-spinner [type]="'square'" [shape]="'starter'" [diameter]="'72'" [stroke]="'#bada55'" [width]="'3'" [speed]="'1.2'"></app-sh-spinner>
+    </div>
+    <h3>Generates the following markup:</h3>
+    <code class="generates">
+      <pre>
+        &lt;div _ngcontent-dmt-3="" class="sh-spinner sh-spinner-square"&gt;
+          &lt;svg _ngcontent-dmt-3="" class="sh-spinner-square fadeOut" width="900" height="96" viewBox="0 0 900 96"&gt;
+              &lt;g _ngcontent-dmt-3="" transform="translate(411, 9)"&gt;
+                &lt;rect _ngcontent-dmt-3="" fill="none" stroke-miterlimit="10" x="0" y="0" id="starter0" stroke="#bada55" opacity="1" stroke-width="3" stroke-linecap="round" rx="3" ry="3" height="59.575222039230624" width="59.575222039230624" stroke-dasharray="[movable target]"&gt;
+              &lt;/rect&gt;
+            &lt;/g&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+      </pre>
+    </code>
+  </div>
+  <p>Almost all of the elements of the svg rect are available. In this instance however, <b>[diameter]</b> 
+  is the width and height of the rect object. All of the other attributes are essentially the same as the 'circle' type</p>
+  <p>The colours specified in the <b>[stroke]</b> attribute <i>only</i> accepts a hex colour. 
+  This is because, using either rgb, rgba, hls or hlsa throws a 'foo is not a function' error.</p>
+</article>

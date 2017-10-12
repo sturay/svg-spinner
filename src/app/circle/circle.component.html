@@ -1,0 +1,51 @@
+<article>
+  <h2 class="title">[type]="'circle'"</h2>
+  <div class="spinner-content">
+    <p>
+      &lt;app-sh-spinner [type]="'circle'" [shape]="'starter'" [diameter]="'72'" [stroke]="'#ed1b1e'" [width]="'3'" [speed]="'1.2'"&gt;&lt;/app-sh-spinner&gt;
+    </p>
+    <div style="display:block;width:100%;height :6em;">
+      <app-sh-spinner [type]="'circle'" [shape]="'starter'" [diameter]="'72'" [stroke]="'#ed1b1e'" [width]="'3'" [speed]="'1.2'"></app-sh-spinner>
+    </div>
+    <h3>Generates the following markup:</h3>
+    <code class="generates">
+      <pre>
+        &lt;div _ngcontent-qst-3="" class="sh-spinner sh-spinner-circle"&gt;
+          &lt;svg _ngcontent-qst-3="" class="sh-spinner-circle fadeOut" width="900" height="96" viewBox="0 0 900 96"&gt;
+            &lt;g _ngcontent-qst-3="" transform="translate(450, 48)"&gt;
+              &lt;circle _ngcontent-qst-3="" cx="0" cy="0" fill="none" stroke-miterlimit="10" id="starter0" stroke="#ed1b1e" opacity="1" stroke-width="3" stroke-linecap="round" r="36" transform="rotate([movable target])" stroke-dasharray="[movable target]"&gt;
+              &lt;/circle&gt;
+            &lt;/g&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+      </pre>
+    </code>
+  </div>
+  <p>Almost all of the elements of the svg circle are available. Some of the naming seems odd, 
+    or wrong but that is because I wanted to avoid using standard attribute names. They may well
+    require a rethink at some point.</p>
+  <p>The colours specified in the <b>[stroke]</b> attribute <i>only</i> accepts a hex colour. 
+  This is because, using either rgb, rgba, hls or hlsa throws a 'foo is not a function' error.</p>
+    <p>
+      Adding opacity to the element is as simple as adding an <b>[opacity]</b> option in the markup.<br>
+      &lt;app-sh-spinner [type]="'circle'" [shape]="'starter'" [diameter]="'122'" [stroke]="'#ed1b1e'" [width]="'5'" [speed]="'2'" [opacity]="'.3'"&gt;&lt;/app-sh-spinner&gt;
+    </p>
+    <div style="display:block;width:100%;height :8em;">
+      <app-sh-spinner [type]="'circle'" [shape]="'starter'" [diameter]="'122'" [stroke]="'#ed1b1e'" [width]="'3'" [speed]="'2'" [opacity]="'.3'"></app-sh-spinner>
+    </div>
+    <p>The circle type also lends itself to dashes of equal sizes. The additional element is <b>[divs]</b>, short for 'divisions'.
+      An odd number is the number of visible lines and an even number is the number of lines <i>and</i> gaps. The number should 
+      not be enclosed within "'n'", just "n" as it needs to be a number, which is odd as it's the only one that needs this but isn't 
+      the only number.</p>
+    <div style="display: flex;">
+      <div style="display:block;width:49%;height :8em;">[divs]="2"
+        <app-sh-spinner [type]="'circle'" [shape]="'starter'" [diameter]="'122'" [stroke]="'#bada55'" [width]="'3'" [speed]="'2'" [opacity]="'1'" [divs]="2"></app-sh-spinner>
+      </div>
+      <div style="display:block;width:49%;height :8em;">[divs]="3"
+        <app-sh-spinner [type]="'circle'" [shape]="'starter'" [diameter]="'122'" [stroke]="'#bada55'" [width]="'8'" [speed]="'2'" [opacity]="'1'" [divs]="3"></app-sh-spinner>
+      </div>
+    </div>
+    <p>
+      &nbsp;
+    </p>
+</article>

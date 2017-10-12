@@ -1,0 +1,29 @@
+<article>
+  <h2 class="title">[type]="'line'"</h2>
+  <div class="spinner-content">
+    <p>
+      &lt;app-sh-spinner [type]="'line'" [shape]="'starter'" [stroke]="'#b090ff'" [width]="'13'" [speed]="'2'" [linecap]="butt"&gt;&lt;/app-sh-spinner&gt;
+    </p>
+    <div style="display:block;width:100%;height:2em;">
+      <app-sh-spinner [type]="'line'" [shape]="'starter'" [stroke]="'#b090ff'" [width]="'13'" [speed]="'2'" [linecap]="butt"></app-sh-spinner>
+    </div>
+    <h3>Generates the following markup:</h3>
+    <code class="generates">
+      <pre>
+        &lt;div _ngcontent-kyy-3="" class="sh-spinner sh-spinner-line"&gt;
+          &lt;svg _ngcontent-kyy-3="" class="sh-spinner-line fadeOut" width="900" height="3" viewBox="0 0 900 3"&gt;
+            &lt;g _ngcontent-kyy-3="" transform="translate( 0, 1.5)"&gt;
+              &lt;line _ngcontent-kyy-3="" fill="none" stroke-miterlimit="10" y1="0" y2="0" id="starter0" stroke="#bada55" opacity="1" stroke-width="3" stroke-linecap="round" x1="3" x2="897" stroke-dasharray="[moveable target]"&gt;
+              &lt;/line&gt;
+            &lt;/g&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;      
+      </pre>
+    </code>
+  </div>
+  <p>The line is nice and simple, as the e is no need to use the <b>[diameter]</b> attribute as it sets its width to the 
+  parent element's width in the DOM. This is meant as an indeterminate progress bar and not a loading bar.</p>
+  <p>There are fewer options available for this type, but that is not an issue.</p>
+  <p>The colours specified in the <b>[stroke]</b> attribute <i>only</i> accepts a hex colour. 
+  This is because, using either rgb, rgba, hls or hlsa throws a 'foo is not a function' error.</p>
+</article>
