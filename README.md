@@ -1,6 +1,9 @@
 # svg-spinner 
 SVG based spinner for Angular2 - Typescript
 
+---
+*I need more time to spend on this, it has lain forgotten for too long. Hopefully, future projects will allow for additional time on this. *
+
 All requests to assist in the betterment of this spinner would be well received.
 
 Based on a simple svg spinner directive for angular 1.x with circular and linear versions and lots of options.
@@ -67,6 +70,13 @@ The 'overlay' and 'alpha' settings are specific to the 'surround' type and have 
 `</div>`
 
 ------------
+
+## ToDo
+* Upgrade to the latest version of Angular.
+* Directionality.
+* Fade hooks for enter and exit.
+* Dash styles.
+* Countdown within shaped spinner.
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.16.
 
